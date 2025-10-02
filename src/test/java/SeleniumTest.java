@@ -1,8 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.junit.After;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.time.Duration;
@@ -24,10 +23,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.File;
 
 public class SeleniumTest {
@@ -59,7 +56,7 @@ public class SeleniumTest {
     }
   }
 
-  @BeforeEach
+  @Before
   public void setUp() {
 
     try {
