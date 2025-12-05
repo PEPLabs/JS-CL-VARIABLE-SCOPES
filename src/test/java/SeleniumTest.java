@@ -1,7 +1,8 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.time.Duration;
@@ -23,7 +24,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
-import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 
@@ -56,7 +56,7 @@ public class SeleniumTest {
     }
   }
 
-  @Before
+  @BeforeEach
   public void setUp() {
 
     try {
@@ -115,7 +115,7 @@ public class SeleniumTest {
     String outputTextGlobal = (String) jsExecutor
         .executeScript("return document.getElementById('output-global').textContent;");
     String expectedTextGlobal = "I am a global scope variable!";
-    assertEquals(expectedTextGlobal, outputTextGlobal);
+    Assertions.assertEquals(expectedTextGlobal, outputTextGlobal);
   }
 
   @Test
@@ -129,7 +129,7 @@ public class SeleniumTest {
     String outputTextLocalLet = (String) jsExecutor
         .executeScript("return document.getElementById('output-local-let').textContent;");
     String expectedTextLocalLet = "I am a local scope variable declared using the let keyword!";
-    assertEquals(expectedTextLocalLet, outputTextLocalLet);
+    Assertions.assertEquals(expectedTextLocalLet, outputTextLocalLet);
   }
 
   @Test
@@ -143,12 +143,12 @@ public class SeleniumTest {
     String outputTextLocalLet = (String) jsExecutor
         .executeScript("return document.getElementById('output-local-var').textContent;");
     String expectedTextLocalLet = "I am a local scope variable declared using the var keyword!";
-    assertEquals(expectedTextLocalLet, outputTextLocalLet);
+    Assertions.assertEquals(expectedTextLocalLet, outputTextLocalLet);
 
     String outputTextLocalVar = (String) jsExecutor
         .executeScript("return document.getElementById('output-reassigned-var').textContent;");
     String expectedTextLocalVar = "I have been reassigned with a different value!";
-    assertEquals(expectedTextLocalVar, outputTextLocalVar);
+    Assertions.assertEquals(expectedTextLocalVar, outputTextLocalVar);
   }
 
   @Test
@@ -162,7 +162,7 @@ public class SeleniumTest {
     String outputTextBlockConst = (String) jsExecutor
         .executeScript("return document.getElementById('output-block-const').textContent;");
     String expectedTextBlockConst = "I am a block-level scope variable declared using the const keyword!";
-    assertEquals(expectedTextBlockConst, outputTextBlockConst);
+    Assertions.assertEquals(expectedTextBlockConst, outputTextBlockConst);
   }
 
   private void printEnvironmentInfo() {

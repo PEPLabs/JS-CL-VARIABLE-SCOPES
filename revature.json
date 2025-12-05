@@ -1,0 +1,30 @@
+{
+  "type": "java",
+  "testFiles": [
+    {
+      "path": "src/test/java/SeleniumTest.java",
+      "testCases": [
+        {
+          "methodName": "testGlobalScope",
+          "label": "Verify global JavaScript variable behavior",
+          "description": "Tests that a JavaScript global variable updates the DOM correctly and matches the expected text."
+        },
+        {
+          "methodName": "testLocalScope",
+          "label": "Verify local JavaScript variable behavior using let",
+          "description": "Tests that a JavaScript local variable declared with let updates the DOM correctly and matches the expected text."
+        },
+        {
+          "methodName": "testVarScope",
+          "label": "Verify local JavaScript variable behavior using var",
+          "description": "Tests that a JavaScript local variable declared with var and reassigned updates the DOM correctly and matches the expected text."
+        },
+        {
+          "methodName": "testBlockScope",
+          "label": "Verify block-level JavaScript variable behavior using const",
+          "description": "Tests that a JavaScript block-level variable declared with const updates the DOM correctly and matches the expected text."
+        }
+      ]
+    }
+  ]
+}
